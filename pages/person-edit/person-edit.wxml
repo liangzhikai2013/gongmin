@@ -1,0 +1,51 @@
+<view style="text-align:center">
+  <image src="/images/default.png" style="width: 88px;height: 88px;border-radius:50%;margin-top:35px"></image>
+  <view style="color: #bfbebe;font-size: 13px;margin-top:11px">点击更改</view>
+  <view style="width:300px;margin-left:32px;margin-top:30px">
+    <view class="item">
+      <view class="name">昵称</view>
+      <input type="text"placeholder-style=
+      'font-size:16px;color: #19191b;' 
+      placeholder=
+      '马小跳'/>
+  </view>
+  <view class="item">
+      <view class="name">性别</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{gender}}">
+        <view class="picker" >
+          <span> {{gender[index]}}</span>
+        </view>
+      </picker>
+  </view>
+  <view class="item">
+    <view class="name">生日</view>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker" >
+          <span> {{date}}</span>
+        </view>
+      </picker>
+  </view>
+  <view class="item">
+      <view class="name">学校</view>
+      <input type="text"placeholder-style=
+      'font-size:16px;color: #19191b;' 
+      placeholder=
+      '北京印刷学院'/>
+  </view>
+  <view class="item">
+      <view class="name">专业</view>
+      <input type="text"placeholder-style=
+      'font-size:16px;color: #19191b;' 
+      placeholder=
+      '数字媒体艺术'/>
+  </view>
+  <view class="item">
+      <view class="name">个人简介</view>
+      <input type="text"placeholder-style=
+      'font-size:16px;color: #19191b;' 
+      placeholder=
+      '我是一名......'/>
+  </view>
+  </view>
+  <view class="btn">保存</view>
+</view>

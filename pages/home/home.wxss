@@ -1,0 +1,158 @@
+.top{
+  padding: 6px 16px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.top swiper{
+  margin-top: 10px;
+  height: 82px;
+  box-shadow: 3px 6px 0px 0px 
+    rgba(0, 0, 0, 0.16);
+  border-radius:16px;
+}
+.top swiper-item{
+  border-radius:16px;
+  
+  
+}
+.top swiper-item image{
+  width: 100%;
+	height: 82px;
+}
+.top .input{
+  height: 32px;
+	background-color: #f6f7f8;
+  border: solid 1px #8995a5;
+  border-radius:16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.top .input image{
+  width: 14px;
+  height: 14px;
+  margin-left: 11px;
+  
+}
+.top .input input{
+ color: #a9aaab;
+ font-size: 12px;
+  margin-left: 11px;
+  width: 100%;
+}
+.top .title{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 25px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.title .kuxun{
+  display: flex;
+  flex-direction: row;
+
+}
+.title .go{
+  width: 11px;
+	height: 11px;
+}
+
+.dots {
+  width: 100%;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+ 
+/*未选中时的小圆点样式 */
+ 
+.dot {
+  width: 5px;
+	height: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left:5px;
+  background-color: #c7c7c7;
+}
+ 
+/*选中以后的小圆点样式  */
+ 
+.active {
+  width: 8px;
+	height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left:5px;
+  background-color: #707070;
+}
+.content-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-list{
+  width: 100%;
+  margin-top:25px;
+  column-count: 2;
+  column-gap: 20px;
+  
+}
+.content-item{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  break-inside: avoid;/*避免在元素内部插入分页符*/
+  box-sizing: border-box; 
+}
+.content-item .picimage{
+  width: 100%;
+  display:block;
+  
+  border-radius:10px;
+  max-height: 400px;
+  object-fit: cover;
+}
+.content-item span{
+  height: 31px;
+  font-size: 12px;
+  color: #323334;
+  margin: 5px 0 10px 0;
+  overflow: hidden;
+}
+.content-item-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  margin-bottom: 20px;
+}
+.group{
+  display: flex;
+  height: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+.group span{
+  font-size: 12px;
+  color: #98999a;
+  margin: 0 5px;
+  line-height: 20px;
+  height: 20px;
+}
+.content-item .icon{
+  width: 14px;
+	height: 13px;
+}
+.content-item .avatar{
+  width: 17px;
+  height: 17px;
+  border-radius:50%;
+}

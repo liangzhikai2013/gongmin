@@ -1,0 +1,23 @@
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow: visible!important;
+  background-color: #ffffff;
+  justify-content: space-between;
+  padding-left:20px;
+  padding-right:20px;
+  align-items: center;
+}
+input{
+  color: #818184;
+  font-size: 12px;
+}
+image{
+  width: 21px;
+	height: 18px;
+}

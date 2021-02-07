@@ -1,0 +1,58 @@
+<view style="background-color: #f4f5f9;">
+<view style="padding:22px;background-color: #ffffff;">
+  <view class="add-address">
+    <span>添加收货地址</span>
+    <image src="/images/luck-order/add.png"></image>
+  </view>
+  <view class="line"></view>
+  <view class="authentication">
+    <span>实名认证</span>
+    <image src="/images/luck-order/authentication.png"></image>
+  </view>
+  <view class="line"></view>
+  <view class="order-content">
+    <image src="/images/default.png"></image>
+    <view class="order-text">
+      <view class="title">自制手机壳  自制手机壳自制手机壳</view>
+      <view class="title">自制手机壳  自制手机壳自制手机壳</view>
+      <view class="count">蓝色 数量X1</view>
+      <view class="price">¥39</view>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="notice">商品由买家发货，预计5-15天到货</view>
+</view>
+<view class="purchase">
+    <span>购买规则</span>
+    <span> 合计<span style="font-weight:bold;margin-left:3px">¥39.87</span></span>
+  </view>
+  <view class="rule-content">
+    <span>
+      1、退换货问题:按照七天无理由退换货政策我们无条件配合亲们的退换货申请商品，经常穿着，洗涤，遭污损,人为损
+    </span>
+    <span>
+      1、退换货问题:按照七天无理由退换货政策我们无条件配合亲们的退换货申请商品，经常穿着，洗涤，遭污损,人为损
+    </span>
+    <span>
+      1、退换货问题:按照七天无理由退换货政策我们无条件配合亲们的退换货申请商品，经常穿着，洗涤，遭污损,人为损
+    </span>
+    <span>
+      1、退换货问题:按照七天无理由退换货政策我们无条件配合亲们的退换货申请商品，经常穿着，洗涤，遭污损,人为损
+    </span>
+    <span>
+      1、退换货问题:按照七天无理由退换货政策我们无条件配合亲们的退换货申请商品，经常穿着，洗涤，遭污损,人为损
+    </span>
+    <span>
+      1、退换货问题:按照七天无理由退换货政策我们无条件配合亲们的退换货申请商品，经常穿着，洗涤，遭污损,人为损
+    </span>
+    <span>
+      提交订单并表示同意 <span style="color: #13b9ba;margin-left:11px">买家须知</span>
+    </span>
+    <view class="line" style="margin:0"></view>
+  <view class="bottom">
+    <span class="real-price">实付款：¥ 0</span>
+    <view class="btn-submit">提交订单</view>
+  </view>
+  </view>
+  
+</view>

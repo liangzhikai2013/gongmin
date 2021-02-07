@@ -1,0 +1,65 @@
+<view >
+  <view class="top">
+  <view class="input">
+    <image src="/images/home/search.png"></image>
+    <input type="text" class="input-school" placeholder-style=
+  'font-size:12px;color: #a9aaab;' 
+  placeholder=
+  '输入学校名称快速搜索'/>
+  </view>
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" bindchange="swiperChange"current="{{currentSwiper}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image src="/images/default.png" alt=""/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="dots">
+        <block wx:for="{{background}}" wx:key="*this">
+          <view class="{{index == currentSwiper ? 'active' : 'dot'}}"></view>
+        </block>
+      </view>
+      <view class="title">
+        <view class="kuxun">
+          <span style="font-size: 18px;line-height: 25px;color: #545e6a;"> 共鸣快讯 </span>
+          <view style="font-size: 13px;line-height: 25px;margin-left:20px;color: #adadad;">关于共情商家加盟报名测试可…</view>
+        </view>
+        
+        <view> <image src="/images/home/go.png" class="go"></image></view>
+      </view>
+
+  </view>
+  <view style="height: 10px;background-color: #f4f5f9;width100%"></view>
+  <view style="padding:20px 15px 150px 15px">
+    <view class="content-top">
+      <view style="display:flex;flex-direction: row;align-items: center;">
+        <view style="width: 4px;height: 16px;background-color: #545e6a;"></view>
+      <span style="font-size: 16px;color: #19191b;font-weight: bold;margin-left:5px">推荐关注</span>
+      </view>
+      <view style="font-size: 13px;color: #8995a5;">换一换</view>
+    </view>
+    <view class="content-list">
+      <block  wx:for="{{background}}" wx:key="*this">
+        <navigator url="/pages/details/details?type=1" class="content-item" >
+        <image src="/images/default{{index}}.png" class="picimage" mode="widthFix"></image>
+        <span>DIY｜原创手机壳 可可爱爱秋冬限定</span>
+        <view class="content-item-bottom">
+          <view class="group">
+            <image src="/images/default.png" class="avatar"/>
+          <span>小心</span>
+          </view>
+          <view class="group">
+            <image src="/images/home/zan.png" class="icon"/>
+            <span>234</span>
+          </view>
+        </view>
+      </navigator>
+
+
+      </block>
+     
+
+    </view>
+  </view>
+</view>

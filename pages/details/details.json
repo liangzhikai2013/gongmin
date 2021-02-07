@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bottom":"/pages/product-bottom/product-bottom",
+    "mybottom":"/pages/my-product-bottom/my-product-bottom"
+  }
+}

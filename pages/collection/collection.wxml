@@ -1,0 +1,71 @@
+<div class="dynamic-list">
+
+  <div class="commodity-content">
+    <div style="display:flex;justify-content:space-between">
+      <div class="personal-infor">
+        <image class="personal-avatar" src="{{userInfo.avatarUrl}}"></image>
+        <div class="personal-right">
+          <div class="personal-name">梁智凯</div>
+          <div class="personal-time">2020-9-3 13: 05</div>
+        </div>
+
+      </div>
+      <div class="btn-follow">关注</div>
+    </div>
+
+    <div class="dynamic-text">自创💗💗💗</div>
+    <div class="dynamic-img">
+      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img1"></image>
+    </div>
+    <div class="dynamic-bottom">
+      <div class="dynamic-bottom-item">
+        <image src="../../images/myhome/forward.png" class="dynamic-icon"></image>
+        <span class="dynamic-span">6</span>
+      </div>
+      <div class="dynamic-bottom-item">
+        <image src="../../images/myhome/comment.png" class="dynamic-icon"></image>
+        <span class="dynamic-span">6</span>
+      </div>
+      <div class="dynamic-bottom-item">
+        <image src="../../images/myhome/zan.png" class="dynamic-icon"></image>
+        <span class="dynamic-span">6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="commodity-content">
+    <div style="display:flex;justify-content:space-between">
+      <div class="personal-infor">
+        <image class="personal-avatar" src="{{userInfo.avatarUrl}}"></image>
+        <div class="personal-right">
+          <div class="personal-name">梁智凯</div>
+          <div class="personal-time">2020-9-3 13: 05</div>
+        </div>
+
+      </div>
+      <div class="btn-follow">关注</div>
+    </div>
+    <div class="dynamic-text">自创💗💗💗</div>
+    <div class="dynamic-img">
+      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2"></image>
+      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2"></image>
+      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2"></image>
+    </div>
+    <div class="dynamic-bottom">
+      <div class="dynamic-bottom-item">
+        <image src="../../images/myhome/forward.png" class="dynamic-icon"></image>
+        <span class="dynamic-span">6</span>
+      </div>
+      <div class="dynamic-bottom-item">
+        <image src="../../images/myhome/comment.png" class="dynamic-icon"></image>
+        <span class="dynamic-span">6</span>
+      </div>
+      <div class="dynamic-bottom-item">
+        <image src="../../images/myhome/zan.png" class="dynamic-icon"></image>
+        <span class="dynamic-span">6</span>
+      </div>
+    </div>
+  </div>
+
+
+</div>

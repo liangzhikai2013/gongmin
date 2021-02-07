@@ -1,0 +1,26 @@
+
+.my-bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: white;
+  padding-left: 0px;
+  padding-right: 0px;
+
+}
+.btn{
+  width: 49.5%;
+	height: 50px;
+	background-color: #53606f;
+	border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 50px;
+}

@@ -1,0 +1,53 @@
+<view style="background-color: #f1f3f1;">
+  <view class="top">
+    <navigator url="/pages/zan/zan" class="item">
+      <view class="left">
+        <image src="/images/default.png"></image>
+        <view class="person-infor">
+          <view style="font-size: 16px;color: #19191b;line-height: 32px;">点赞</view>
+          <view style="font-size: 11px;color: #a0a1a2;line-height: 16px;">网络一班的赵敏点赞了你</view>
+        </view>
+      </view>
+      <view class="right">99+</view>
+    </navigator>
+    <view style="height: 0px;border: solid 1px #f4f5f7;"></view>
+    <navigator url="/pages/notice-details/notice-details" class="item">
+      <view class="left">
+        <image src="/images/default.png"></image>
+        <view class="person-infor">
+          <view style="font-size: 16px;color: #19191b;line-height: 32px;">评论</view>
+          <view style="font-size: 11px;color: #a0a1a2;line-height: 16px;">网络一班的赵敏评论了你</view>
+        </view>
+      </view>
+      <view class="right">99+</view>
+    </navigator>
+    <view style="height: 0px;border: solid 1px #f4f5f7;"></view>
+    <navigator url="/pages/sys-notice-details/sys-notice-details" class="item">
+      <view class="left">
+        <image src="/images/default.png"></image>
+        <view class="person-infor">
+          <view style="font-size: 16px;color: #19191b;line-height: 32px;">系统通知</view>
+          <view style="font-size: 11px;color: #a0a1a2;line-height: 16px;">此次更新内容：。。。</view>
+        </view>
+      </view>
+      <view class="right">99+</view>
+    </navigator>
+
+    
+  </view>
+  <view class="bottom">
+      <block wx:for="{{news}}" wx:key="index">
+        <navigator url="/pages/vchat/vchat" class="item">
+          <view class="left">
+            <image src="/images/default.png"></image>
+            <view class="person-infor">
+              <view style="font-size: 16px;color: #19191b;line-height: 32px;">鸿运当头</view>
+              <view style="font-size: 11px;color: #a0a1a2;line-height: 16px;">原创设计吗？</view>
+            </view>
+          </view>
+          <view class="time">03:18</view>
+        </navigator>
+        <view style="height: 0px;border: solid 1px #f4f5f7;"></view>
+      </block>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+Page({
+  data:{
+    switch1Checked:true
+  },
+  switch1Change(e){
+    this.setData({
+      switch1Checked:e.detail.value
+    })
+  }
+})

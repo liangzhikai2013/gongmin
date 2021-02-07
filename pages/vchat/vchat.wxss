@@ -1,0 +1,49 @@
+.page{
+  width: 100vw;
+  background-color: #f4f4f4;
+  margin: 0;
+  height: 100vh;
+  padding-bottom:150px ;
+}
+.time{
+  line-height: 20px;
+  font-size: 14px;
+  color: #818184;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.avatar{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+.me{
+  display: flex;
+  margin-top: 20px;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.friend{
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.me .content{
+  width: 248px;
+	background-color: #536070;
+  border-radius: 17px;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.friend .content{
+  width: 248px;
+	background-color: #fdfdfd;
+  border-radius: 17px;
+  padding: 20px;
+  color: #000000;
+  font-size: 14px;
+  margin-left: 10px;
+}

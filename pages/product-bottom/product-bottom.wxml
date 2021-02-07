@@ -1,0 +1,10 @@
+<cover-view class="bottom">
+        <cover-view class="collection">
+          <cover-image src="/images/details/collection.png"></cover-image>
+          <cover-view style="color:#818184;font-size: 10px;margin-top:5px">收藏</cover-view>
+        </cover-view>
+        <cover-view style="display:flex;flex-direction:row">
+          <navigator url="/pages/luck-draw/luck-draw" class="luck-draw" hover-class="action">抽奖</navigator>
+          <navigator url="/pages/order-content/order"  class="buy" hover-class="action">我要购买</navigator>
+        </cover-view>
+</cover-view>

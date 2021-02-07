@@ -1,0 +1,16 @@
+<view class="page">
+  <view style="font-size: 11px;color: #434445;margin:25px 0 6px 21px">热点问题</view>
+  <navigator url="/pages/vchat/vchat" class="item">
+    <view>共鸣支付相关问题</view>
+    <image src="/images/go.png"></image>
+  </navigator>
+  <navigator url="/pages/vchat/vchat" class="item">
+    <view>共鸣如何开启或关闭消息通知？</view>
+    <image src="/images/go.png"></image>
+  </navigator>
+  <navigator url="/pages/vchat/vchat" class="item">
+    <view>如何发布自己的商品？</view>
+    <image src="/images/go.png" ></image>
+  </navigator>
+  <send></send>
+</view>

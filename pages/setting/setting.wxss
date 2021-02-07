@@ -1,0 +1,42 @@
+.page{
+  width: 100vw;
+  height: 100vh;
+  background: #f1f3f1;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  padding:20px;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  
+}
+.left{
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.top image{
+  
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.item{
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content:space-between;
+  color: #434445;
+  border: solid 1px #f1f3f1;
+ 
+}
+.item image{
+  width: 13px;
+  height: 13px;
+  
+}

@@ -1,0 +1,20 @@
+<view class="page">
+<navigator url="/pages/address-edit/address-edit" class="btn-add">
+<span>新增收货地址</span>
+<span style="font-size: 17px;">+</span>
+</navigator>
+<view style="height: 0px;border: solid 1px #f4f5f7;margin-top:20px"/>
+<view class="address-infor-1">
+  <span>小红</span>
+  <span>15897265831</span>
+</view>
+<view class="address-infor-2"> 北京市大兴区兴华大街二段1号北京印刷学院</view>
+<view class="address-infor-3">
+  <radio color="#2c2c2c" checked="{{}}">设为默认地址</radio>
+  <view class="btn-group">
+    <view class="btn1">编辑</view>
+    <view class="btn1">删除</view>
+  </view>
+</view>
+<view style="height: 0px;border: solid 1px #f4f5f7;margin-top:20px"/>
+</view>

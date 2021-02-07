@@ -1,0 +1,30 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<div>
+  <div class="background" bindtap="closeshow" wx:if="{{show}}">
+  </div>
+  <view class="click-top" wx:if="{{show}}">
+    <span style="margin-bottom:141px;color: #ffffff;font-size: 21px;"> 发布点什么 </span>
+    <div class="click-top">
+      <navigator url="/pages/release-view/release" class="item">
+        <image src="/images/tabbar/original.png"></image>
+        <span style="margin-top:4px">原 创</span>
+      </navigator>
+      <navigator url="/pages/release-view/release" class="item">
+        <image src="/images/tabbar/second.png"></image>
+        <span style="margin-top:4px">二次创作</span>
+      </navigator>
+    </div>
+
+  </view>
+  <view class="top-dev" wx:if="{{show}}">
+    <image src="/images/tabbar/catchfish.png" class="top-img"></image>
+  </view>
+
+  <div class="tab-bar">
+    <div wx:for="{{list}}" wx:key="index" class="{{item.text== '摸个鱼'?'tab-bar-item-1':'tab-bar-item'}}"
+      data-path="{{item.pagePath}}" data-text="{{item.text}}" data-index="{{index}}" bindtap="switchTab">
+      <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+      <div style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</div>
+    </div>
+  </div>
+</div>

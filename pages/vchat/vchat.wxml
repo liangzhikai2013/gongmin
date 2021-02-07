@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="time">18:53</view>
+  <view class="friend">
+    <image src="/images/default.png" class="avatar"></image>
+    <view class="content">您好，我是一个美术大学科毕业，平时不
+仅亲手绘制杂志与书籍的插画，以及制作
+手工手机壳，近年也在做很多手工的系列
+衍生品，设计制作作品。
+感谢您对我的信任与喜欢哦～"</view>
+    
+  </view>
+  <view class="time">18:53</view>
+  <view class="me">
+   
+    <view class="content">您好，我想询问一下这个手机壳，他的是
+用什么材质做的呢？</view>
+<image src="/images/default.png" class="avatar"></image>
+    
+  </view>
+  <view class="time">18:53</view>
+  <view class="me">
+   
+    <view class="content">您好，我想询问一下这个手机壳，他的是
+用什么材质做的呢？</view>
+<image src="/images/default.png" class="avatar"></image>
+    
+  </view>
+  <view class="time">18:53</view>
+  <view class="me">
+   
+    <view class="content">您好，我想询问一下这个手机壳，他的是
+用什么材质做的呢？</view>
+<image src="/images/default.png" class="avatar"></image>
+    
+  </view>
+  <view class="time">18:53</view>
+  <view class="me">
+   
+    <view class="content">您好，我想询问一下这个手机壳，他的是
+用什么材质做的呢？</view>
+<image src="/images/default.png" class="avatar"></image>
+    
+  </view>
+  <view class="time">18:53</view>
+  <view class="me">
+   
+    <view class="content">您好，我想询问一下这个手机壳，他的是
+用什么材质做的呢？</view>
+<image src="/images/default.png" class="avatar"></image>
+    
+  </view>
+  <send></send>
+</view>

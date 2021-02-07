@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "send": "/pages/send/send"
+  }
+}

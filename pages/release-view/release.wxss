@@ -1,0 +1,141 @@
+.block{
+  width: scal(100%-40px);
+	height: 209px;
+	background-color: #f6f7f8;
+  border-radius: 12px;
+  padding: 24px 20px;
+}
+.block input{
+  font-size: 15px;
+  color: #a9aaab;
+}
+.imglist{
+ 
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  overflow: scroll;
+  
+}
+::-webkit-scrollbar {
+  display:none;
+  width:0;
+  height:0;
+  color:transparent;
+}
+.imglist image{
+  flex-shrink:0;
+  display:block;
+  width: 81px;
+  height: 96px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.add-block{
+  width: 81px;
+	height: 96px;
+	background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  color: #a9aaab;
+  align-items: center;
+  font-size: 24px;
+  margin-left: 10px;
+}
+.add-block image{
+  width: 24px;
+	height: 24px;
+}
+.bottom{
+  margin-top: 87px;
+  display: flex;
+  flex-direction: row;
+}
+.input-title{
+  display: flex;
+  flex-direction: row;
+  margin-top: 29px;
+  align-items: center;
+}
+.input-title span{
+  font-size: 18px;
+  color: #19191b;
+  font-weight: bold;
+}
+.input-title input{
+  margin-left: 19px;
+  font-size: 13px;
+  color: #a9aaab;
+}
+.line{
+  width: 100%;
+	height: 0px;
+  border: solid 1px #f4f5f7;
+  margin-top: 25px;
+}
+.worksinfor{
+  display: flex;
+  flex-direction: row;
+  margin-top: 29px;
+  align-items: center;
+}
+.worksinfor span{
+  width: 80px;
+  font-size: 16px;
+  color: #2e2e31;
+}
+.worksinfor input{
+  margin-left: 32px;
+  font-size: 13px;
+  color: #a9aaab;
+}
+.worksinfor radio{
+  transform:scale(0.7);
+}
+
+.worksinfor label{
+  margin-left: 32px;
+  color:"#2c2c2c"
+}
+.worksitem .line{
+  margin-top: 12px;
+}
+.worksitem picker{
+  margin-left: 32px;
+  color: #a9aaab;
+  font-size: 13px;
+  width: 200px;
+  height: 20px;
+}
+.picker image{
+  width: 15px;
+  height: 21px;
+}
+.picker{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.picker span{
+  margin-left: 7px;
+  color: #a9aaab;
+  font-size: 13px;
+  line-height: 22px;
+}
+.submit{
+  width: 295px;
+  height: 43px;
+  background-color: #53606f;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 21px auto;
+ 
+
+}

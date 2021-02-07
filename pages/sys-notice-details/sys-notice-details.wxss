@@ -1,0 +1,6 @@
+.item{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}

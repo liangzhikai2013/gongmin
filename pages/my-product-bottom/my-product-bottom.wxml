@@ -1,0 +1,6 @@
+<cover-view class="my-bottom">
+        <cover-view class="btn">下架作品
+        </cover-view>
+        <navigator url="/pages/release-view/release" class="btn">修改信息
+        </navigator>
+</cover-view>

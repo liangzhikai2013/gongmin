@@ -1,0 +1,41 @@
+<view class="page">
+  <view style="height:20px"></view>
+  <navigator url="/pages/person-edit/person-edit" class="top">
+    <view class="left">
+      <image src="/images/default.png"></image>
+      <view  class="text" style="margin-left: 10px;">
+        <view style="font-size: 21px;line-height: 29px;color: #434445;">这是你的昵称</view>
+        <view style="font-size: 14px;line-height: 20px;color: #434445;">微信登录 ：####"</view>
+      </view>
+    </view>
+    <image src="/images/go.png" style="width: 13px;height: 13px;"></image>
+  </navigator>
+
+  <view class="item" style=" margin-top: 10px;">
+    <view>帐号管理</view>
+    <image src="/images/go.png"></image>
+  </view>
+ 
+  <navigator url="/pages/address-manager/address-manager" class="item">
+    <view>收货地址</view>
+    <image src="/images/go.png" ></image>
+  </navigator>
+
+  <view class="item" style="margin-top:10px;border: solid 0px #f1f3f1;" >
+    <view>Wifi下自动播放</view>
+    <switch checked="{{switch1Checked}}" bindchange="switch1Change" color="#536070"/>
+  </view>
+  <view class="item" style="border: solid 0px #f1f3f1;">
+    <view>视频播放默认静音</view>
+    <switch checked="{{switch1Checked}}" bindchange="switch1Change" color="#536070"/>
+  </view>
+
+  <navigator url="/pages/customer-service/service" class="item" style="margin-top:10px">
+    <view>客服中心</view>
+    <image src="/images/go.png" ></image>
+  </navigator>
+  <navigator url="/pages/about/about" class="item">
+    <view>关于共鸣</view>
+    <image src="/images/go.png" ></image>
+  </navigator>
+</view>

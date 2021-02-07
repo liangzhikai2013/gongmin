@@ -1,0 +1,18 @@
+<view style="padding: 20px 20px 150px 20px;">
+  <block wx:for="{{background}}" wx:key="*this">
+    <view class="item">
+    <view class="left">
+      <image src="/images/default0.png" style="width: 46px;height: 46px;border-radius: 50%;"></image>
+      <view style="display:flex;flex-direction: column;margin-left:15px">
+        <span style="font-size: 16px;color: #19191b;line-height: 22px;">鸿运当头</span>
+        <span style="font-size: 11px;color: #98999a;line-height: 19px;">点赞了你的作品</span>
+        <span style="font-size: 13px;color: #2c2c2c;line-height: 21px;">03:18</span>
+      </view>
+    </view>
+   
+    <image src="/images/default0.png" style="width: 65px;height: 65px;border: solid 1px #707070;"></image>
+  </view>
+  <view class="line"></view>
+  </block>
+  
+</view>

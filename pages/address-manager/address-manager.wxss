@@ -1,0 +1,53 @@
+.page{
+  padding: 20px;
+}
+.btn-add{
+  
+	height: 44px;
+  background-color: #53606f;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 44px;
+  justify-content: space-between;
+  padding:0 20px;
+  display: flex;
+  border-radius: 7px;
+}
+.address-infor-1{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 32px;
+  color: #000000;
+  margin-top: 15px;
+}
+.address-infor-2{
+  font-size: 12px;
+  line-height: 32px;
+  color: #000000;
+}
+.btn-group{
+  display: flex;
+
+}
+.btn1{
+  width: 70px;
+	height: 31px;
+	background-color: #53606f;
+  border-radius: 7px;
+  line-height: 31px;
+  text-align: center;
+  margin-left: 10px;
+  color: #ffffff;
+  font-size: 12px;
+}
+.address-infor-3{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+radio{
+  font-size: 12px;
+  color: #53606f;
+}

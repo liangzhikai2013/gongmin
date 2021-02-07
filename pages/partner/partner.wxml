@@ -1,0 +1,5 @@
+<view class="partner">
+  <image src="/images/partner/partner.png" style="width: 181px;height: 181px;margin-top:170px"></image>
+  <span style="color: #313232;font-size: 18px;">合伙人功能建设中...</span>
+ 
+</view>

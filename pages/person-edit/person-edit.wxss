@@ -1,0 +1,32 @@
+.item{
+  display: flex;
+  height: 45px;
+}
+.item input{
+  margin-left:18px ;
+  color: #19191b;
+  font-size: 16px;
+  text-align: start;
+}
+.item picker{
+  margin-left:18px ;
+  color: #19191b;
+  font-size: 16px;
+  text-align: start;
+}
+.name{
+  font-size: 18px;
+	line-height: 25px;
+	letter-spacing: 0px;
+  color: #bfbebe;
+  width: 72px;
+}
+.btn{
+  width: 120px;
+	height: 36px;
+	background-color: #536070;
+  border-radius: 18px;
+  line-height: 36px;
+  color: #ffffff;
+  margin: 50px auto;
+}

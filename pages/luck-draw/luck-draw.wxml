@@ -1,0 +1,81 @@
+<view style="width:100%">
+  <view class="customer">
+    <image src="/images/luck-draw/customer.png"></image>
+  </view>
+  <view class="forword">
+    <image src="/images/luck-draw/share.png"></image>
+  </view>
+  <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image src="/images/default.png" alt=""/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="price">
+      ¥672
+    </view>
+    <view class="content">
+      <view class="title">
+        <view class="title-left">
+          <view style="font-family: PingFang SC; font-size: 22px;line-height: 30px;color: #707070;">手工手机壳</view>
+          <view  style="font-family: PingFang SC; font-size: 14px;line-height: 20px;color: #000000;">作者：马小跳</view>
+        </view>
+        <view class="title-right">
+          <view class="title-right-item">
+            <image src="/images/luck-draw/sell.png"/>
+            <span>售卖</span>
+          </view>
+          <view class="title-right-item">
+            <image src="/images/luck-draw/show.png"/>
+            <span>展示</span>
+          </view>
+        </view>
+      </view>
+      <view style="line-height: 22px;font-size: 16px;color: #000000;margin-top:9px;letter-spacing: -1px;">
+        简介:
+      </view>
+      <view style="height: 34px;font-size: 12px;line-height: 17px;color: #818184;margin-top:2px">
+        该手机壳所有DIY配件大家也可以根据喜好直接购买，很多DIY
+        饰品可以供你们挑选，把你想做的图案和手机型号告诉作……
+      </view>
+      <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:2px"></view>
+      <view class="participate">
+        <image src="/images/default.png"/>
+        <image src="/images/default.png"/>
+        <image src="/images/default.png"/>
+        <span>等345人已参加</span>
+      </view>
+      <navigator url="/pages/order-content/order" class="btn-luck-draw">参与抽奖</navigator>
+    </view>
+    <view style="height: 10px;background-color: #f4f5f9;width100%"></view>
+    <view class="rules">
+      <span>活动规则</span>
+      <div class="progress">
+        <div class="dot1"></div>
+        <div class="line"></div>
+        <div class="dot0"></div>
+        <div class="line"></div>
+        <div class="dot0"></div>
+      </div>
+      <div class="text">
+        <div class="text-item">
+          <span>抽奖活动开始</span>
+          <span>12.11  00:00</span>
+        </div>
+        <div class="text-item">
+          <span>抽奖活动开始</span>
+          <span>12.11  00:00</span>
+        </div>
+        <div class="text-item">
+          <span>抽奖活动开始</span>
+          <span>12.11  00:00</span>
+        </div>
+
+      </div>
+    </view>
+
+</view>

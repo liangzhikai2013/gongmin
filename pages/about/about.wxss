@@ -1,0 +1,32 @@
+.page{
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-color: #f4f4f4;
+  flex-direction: column;
+  display: flex;
+}
+.image{
+  width: 86px;
+	height: 86px;
+	
+	box-shadow: 0px 3px 6px 0px 
+		rgba(0, 0, 0, 0.16);
+  border-radius: 11px;
+  margin-top: 42px;
+  margin-left: auto;
+  margin-right:auto;
+}
+.item{
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content:space-between;
+  color: #434445;
+  border: solid 1px #f4f4f4;
+}
+.item image{
+  width: 13px;
+  height: 13px;
+  
+}

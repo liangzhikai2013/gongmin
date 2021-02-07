@@ -1,0 +1,7 @@
+<view class="bottom">
+  <input type="text" placeholder-style=
+  'font-size:12px;color: #818184;' 
+  placeholder=
+  '想要说点什么…'/>
+  <image src="/images/send.png"></image>
+</view>

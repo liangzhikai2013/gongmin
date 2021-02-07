@@ -1,0 +1,75 @@
+<view style="padding:20px">
+  <view class="block">
+    <input type="text" class="input-school" placeholder-style='font-size:15px;color: #a9aaab;'
+      placeholder='快点写下作品发布描述吧！' />
+    <view class="bottom">
+      <view class="imglist">
+        <image src="/images/default0.png"></image>
+        <image src="/images/default0.png"></image>
+        <image src="/images/default0.png"></image>
+      </view>
+      <view class="add-block"> + </view>
+    </view>
+  </view>
+  <view class="input-title">
+    <span>添加标题</span>
+    <input type="text" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='写下你的标题吧！以便别早点发现你' />
+  </view>
+  <view class="line"></view>
+  <view style="font-size: 18px;color: #19191b;margin-top:20px;font-weight:bold">作品信息</view>
+  <view class="worksitem">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">作品编号</span>
+      <input type="text" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='247653789' />
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">发布者姓名</span>
+      <input type="text" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='马小跳' />
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">作品类别</span>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{jurisdiction}}">
+        <view class="picker">
+          <image src="/images/release-view/arrow.png"></image>
+          <span> {{jurisdiction[index]}}</span>
+        </view>
+      </picker>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">作品权限</span>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{jurisdiction}}">
+        <view class="picker">
+          <image src="/images/release-view/arrow.png"></image>
+          <span> {{jurisdiction[index]}}</span>
+        </view>
+      </picker>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">作品形式</span>
+      <radio-group bindchange="radioChange">
+        <label class="radio">
+        <radio value="r1" checked="true" color="#2c2c2c"/>展示
+      </label>
+      <label class="radio">
+        <radio value="r2"  color="#2c2c2c"/>出售
+      </label>
+      </radio-group>
+     
+    </view>
+    <view class="line"></view>
+    <view class="submit"> 立即发布 </view>
+
+  </view>
+</view>
