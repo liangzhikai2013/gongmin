@@ -1,12 +1,12 @@
 <view style="">
   <view class="top">
     <view class="item">
-      <input type="text" placeholder-style='font-size:15px;color: #7e808c;' placeholder='小红'/>
+      <input type="text" placeholder-style='font-size:15px;color: #7e808c;' placeholder='请输入收件人' value="{{name}}" bindinput='nameChange'/>
       <span style="">收货人</span>
     </view>
     <view style="height: 0px;border: solid 1px #f4f5f7"/>
     <view class="item">
-      <input type="text" placeholder-style='font-size:15px;color: #7e808c;' placeholder='15897265831'/>
+      <input type="text" placeholder-style='font-size:15px;color: #7e808c;' placeholder='请输入手机号' value="{{phone}}" bindinput='phoneChange'/>
       <view class="right">
         <span>+86</span>
         <image src="/images/home/go.png"></image>
@@ -14,21 +14,21 @@
     </view>
     <view style="height: 0px;border: solid 1px #f4f5f7"/>
     <view class="item">
-      <span>北京市大兴区兴华大街</span>
-      <view class="right">
+      <input type="text" placeholder-style='font-size:15px;color: #7e808c;' placeholder='请输入地址' value="{{location}}" bindinput='locationChange'/>
+      <!-- <view class="right">
         <image src="/images/home/go.png"></image>
-      </view>
+      </view> -->
     </view>
     <view style="height: 0px;border: solid 1px #f4f5f7"/>
     <view class="textarea-detail-address">
       <textarea name="" id="" cols="30" rows="10"  placeholder-style='font-size:15px;color: #7e808c;'
-       placeholder='详细地址（例如：街道、门牌号、小区、楼栋号、单元室等，5～50字）'></textarea>
+       placeholder='详细地址（例如：街道、门牌号、小区、楼栋号、单元室等，5～50字）' value="{{address}}" bindinput='addressChange'></textarea>
     </view>
   </view>
   <view style="height:10px;background:#F4F5F9"></view>
   <view class="btn-group">
-    <view class="btn">删除</view>
-    <view class="btn">确定</view>
+    <!-- <view class="btn">删除</view> -->
+    <view class="btn" bindtap="submit">{{edit!=0?'修改':'确定'}}</view>
   </view>
 
 </view>

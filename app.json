@@ -1,11 +1,25 @@
 {
   "pages":[
+    
     "pages/home/home",
+    "pages/auction/auction",
+   
+    
+    "pages/luck-draw/luck-draw",
+    "pages/release-view/release",
+    "pages/user-auth/auth",
+    "pages/address-manager/address-manager",
+    
+    "pages/person-edit/person-edit",
+    "pages/details/details",
+    
+    "pages/vchat/vchat",
+    
     "pages/my/my",
     "pages/my-product-bottom/my-product-bottom",
-    "pages/person-edit/person-edit",
+    
     "pages/setting/setting",
-    "pages/vchat/vchat",
+    
     "pages/customer-service/service",
     "pages/send/send",
     "pages/about/about",
@@ -15,14 +29,14 @@
     "pages/sys-notice-details/sys-notice-details",
     "pages/notice-details/notice-details",
     "pages/notice/notice",
-    "pages/address-manager/address-manager",
+    
     "pages/collection/collection",
     "pages/partner/partner",
-    "pages/details/details",
-    "pages/release-view/release",
+    
+    
     "pages/zan/zan",
     "pages/order-content/order",
-    "pages/luck-draw/luck-draw",
+    
     "pages/index/index",
     "pages/logs/logs"
   ],

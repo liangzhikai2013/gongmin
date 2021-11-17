@@ -45,6 +45,7 @@ cover-view cover-image{
   text-align: center;
   margin-left: 8px;
 }
+
 .action{
   background: #53606f;
   color: white;

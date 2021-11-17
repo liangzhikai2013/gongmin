@@ -1,65 +1,77 @@
-<view >
+<scroll-view scroll-y="true" lower-threshold="{{200}}">
   <view class="top">
-  <view class="input">
-    <image src="/images/home/search.png"></image>
-    <input type="text" class="input-school" placeholder-style=
-  'font-size:12px;color: #a9aaab;' 
-  placeholder=
-  '输入学校名称快速搜索'/>
-  </view>
-    <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" bindchange="swiperChange"current="{{currentSwiper}}">
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <image src="/images/default.png" alt=""/>
-          </swiper-item>
-        </block>
-      </swiper>
-      <view class="dots">
-        <block wx:for="{{background}}" wx:key="*this">
-          <view class="{{index == currentSwiper ? 'active' : 'dot'}}"></view>
-        </block>
-      </view>
-      <view class="title">
-        <view class="kuxun">
-          <span style="font-size: 18px;line-height: 25px;color: #545e6a;"> 共鸣快讯 </span>
-          <view style="font-size: 13px;line-height: 25px;margin-left:20px;color: #adadad;">关于共情商家加盟报名测试可…</view>
-        </view>
-        
-        <view> <image src="/images/home/go.png" class="go"></image></view>
-      </view>
+    <view class="input">
+      <image src="/images/home/search.png"></image>
+      <input type="text" class="input-school" placeholder-style='font-size:12px;color: #a9aaab;'
+        placeholder='输入学校名称快速搜索' />
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" bindchange="swiperChange"
+      current="{{currentSwiper}}">
+      <block wx:for="{{bannerList}}" wx:key="index">
+        <swiper-item>
+          <image src="{{bannerList[index].img}}" alt="" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{bannerList}}" wx:key="*this">
+        <view class="{{index == currentSwiper ? 'active' : 'dot'}}"></view>
+      </block>
+    </view>
+    <view class="title">
+      <navigator url="/pages/sys-notice-details/sys-notice-details" class="kuxun">
+
+        <span style="font-size: 18px;line-height: 25px;color: #545e6a;"> 共鸣快讯 </span>
+        <view style="font-size: 13px;line-height: 25px;margin-left:20px;color: #adadad;">关于共情商家加盟报名测试可…</view>
+      </navigator>
+
+      <navigator url="/pages/sys-notice-details/sys-notice-details">
+        <image src="/images/home/go.png" class="go"></image>
+      </navigator>
+    </view>
 
   </view>
   <view style="height: 10px;background-color: #f4f5f9;width100%"></view>
-  <view style="padding:20px 15px 150px 15px">
+  <view style="padding:20px 15px 15px 15px">
     <view class="content-top">
       <view style="display:flex;flex-direction: row;align-items: center;">
         <view style="width: 4px;height: 16px;background-color: #545e6a;"></view>
-      <span style="font-size: 16px;color: #19191b;font-weight: bold;margin-left:5px">推荐关注</span>
+        <span style="font-size: 16px;color: #19191b;font-weight: bold;margin-left:5px">推荐关注</span>
       </view>
-      <view style="font-size: 13px;color: #8995a5;">换一换</view>
-    </view>
-    <view class="content-list">
-      <block  wx:for="{{background}}" wx:key="*this">
-        <navigator url="/pages/details/details?type=1" class="content-item" >
-        <image src="/images/default{{index}}.png" class="picimage" mode="widthFix"></image>
-        <span>DIY｜原创手机壳 可可爱爱秋冬限定</span>
-        <view class="content-item-bottom">
-          <view class="group">
-            <image src="/images/default.png" class="avatar"/>
-          <span>小心</span>
-          </view>
-          <view class="group">
-            <image src="/images/home/zan.png" class="icon"/>
-            <span>234</span>
-          </view>
-        </view>
-      </navigator>
-
-
-      </block>
-     
-
+      <view style="font-size: 13px;color: #8995a5;" bindtap="refresh">换一换</view>
     </view>
   </view>
-</view>
+  <waterfall custom-class="waterfall-box"
+  loading="{{updateLoading}}"
+    isAllLoaded="{{isAllLoaded}}">
+          <waterfall-item custom-class="product-item-box" wx:for="{{workList}}" wx:key="index">
+            <view class="content-item">
+              <navigator
+                url="{{item.type=='3'?'/pages/luck-draw/luck-draw':item.type=='4'?'/pages/auction/auction':'/pages/details/details'}}?type=1&id={{item.id}}&&status={{item.type}}">
+                <view class="content-item-top" style=" position: relative;">
+                  <view class="tag" wx:if="{{item.type=='1'}}">展</view>
+                  <view class="tag" wx:if="{{item.type=='2'}}">售</view>
+                  <view class="tag" wx:if="{{item.type=='3'}}">抽</view>
+                  <view class="tag" wx:if="{{item.type=='4'}}">拍</view>
+                  <image src="{{item.cover_img}}" class="picimage" mode="widthFix" >
+
+                  </image>
+                  <span>{{item.title}}</span>
+                </view>
+              </navigator>
+              <view class="content-item-bottom">
+                <navigator url="/pages/person-home/person-home?id={{item.open_id}}" class="group">
+
+                  <image src="{{item.avatar}}" class="avatar" />
+                  <span>{{item.name}}</span>
+                </navigator>
+                <view class="group" bindtap="clickZan" data-index="{{index}}" data-data="{{item}}">
+                  <image src="{{item.state==1||item.state==3?'/images/details/like.jpg':'/images/details/unlike.jpg'}}"
+                    class="icon" />
+                  <span>{{item.zan}}</span>
+                </view>
+              </view>
+            </view>
+          </waterfall-item>
+        </waterfall>
+</scroll-view>

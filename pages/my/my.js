@@ -1,6 +1,9 @@
 // index.js
 // 获取应用实例
 const app = getApp()
+const workList = require('../../config').getWork
+const getUser = require('../../config').getUser
+import { timeHandle } from '../../utils/util'
 
 Page({
   data: {
@@ -9,13 +12,24 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  onShow() {
+    
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 4
+      })
+    }
+  },
   // 事件处理函数
   bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    // wx.navigateTo({
+    //   url: '../logs/logs'
+    // })
   },
   onLoad() {
+    var that = this
+    console.log('aaa')
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -42,6 +56,39 @@ Page({
         }
       })
     }
+    wx.request({
+      url:getUser,
+      data:{
+        open_id:app.globalData.openid
+      },
+      success:function(res){
+        that.setData({
+          user_infor:res.data.data[0]
+        })
+      }
+    })
+    wx.request({
+      url: workList,
+      method:'get',
+      data:{
+        search:1,
+        my_open_id:app.globalData.openid,
+        user_id:app.globalData.openid,
+        
+      },
+      success:function(res){
+        for(var i =0;i< res.data.data.length;i++){
+          res.data.data[i].img_list=res.data.data[i].img_list.split(',')
+          // timeHandle(new Date(res.data.data[i].time).getTime() )
+          
+          res.data.data[i].creat_time=timeHandle(new Date(res.data.data[i].creat_time).getTime() )
+        }
+        that.setData({
+          list:res.data.data
+        })
+        
+      }
+    })
   },
   
 })

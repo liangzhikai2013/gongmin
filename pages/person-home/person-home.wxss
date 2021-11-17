@@ -35,6 +35,7 @@
   color: #ffffff;
   line-height: 32px;
   text-align: center;
+  margin-left: 17px;
 }
 .btn2{
   width: 99px;

@@ -3,18 +3,21 @@
 <span>新增收货地址</span>
 <span style="font-size: 17px;">+</span>
 </navigator>
-<view style="height: 0px;border: solid 1px #f4f5f7;margin-top:20px"/>
+<block wx:for="{{list}}" wx:key='index'>
+  <view style="height: 0px;border: solid 1px #f4f5f7;margin-top:20px"/>
 <view class="address-infor-1">
-  <span>小红</span>
-  <span>15897265831</span>
+  <span>{{list[index].name}}</span>
+  <span>{{list[index].phone}}</span>
 </view>
-<view class="address-infor-2"> 北京市大兴区兴华大街二段1号北京印刷学院</view>
+<view class="address-infor-2"> {{list[index].location}} {{list[index].address}}</view>
 <view class="address-infor-3">
-  <radio color="#2c2c2c" checked="{{}}">设为默认地址</radio>
+  <radio color="#2c2c2c" checked="{{list[index].default==1}}" bindtap="radioChange" data-index="{{index}}"  data-id="{{list[index].id}}">设为默认地址</radio>
   <view class="btn-group">
-    <view class="btn1">编辑</view>
-    <view class="btn1">删除</view>
+    <navigator url="/pages/address-edit/address-edit?id={{list[index].id}}" class="btn1" bindtap="edit">编辑</navigator>
+    <view class="btn1" data-id="{{list[index].id}}" bindtap="dele">删除</view>
   </view>
 </view>
+</block>
+
 <view style="height: 0px;border: solid 1px #f4f5f7;margin-top:20px"/>
 </view>

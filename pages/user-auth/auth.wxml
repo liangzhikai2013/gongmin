@@ -1,0 +1,86 @@
+<view style="padding:20px">
+  <form bindsubmit='auth'>
+  <view class="item">
+    <view>姓名</view>
+    <input type="text"placeholder-style=
+      'font-size:16px;color: #a9aaab;' 
+      placeholder=
+      '输入姓名'
+      name='name'/>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>性别</view>
+    <picker bindchange="genderChange" value="{{gender}}" range="{{genderList}}">
+        <view class="picker">
+          <span> {{genderList[gender]}}</span>
+        </view>
+      </picker>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>年级</view>
+    <picker bindchange="gradeChange" value="{{grade}}" range="{{gradeList}}">
+        <view class="picker">
+          <span> {{gradeList[grade]}}</span>
+        </view>
+      </picker>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>所在学校</view>
+    <input type="text"placeholder-style=
+      'font-size:16px;color: #a9aaab;' 
+      placeholder=
+      '输入学校'
+      value='{{school}}'
+      name='school'/>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>院系</view>
+    <input type="text"placeholder-style=
+      'font-size:16px;color: #a9aaab;' 
+      placeholder=
+      '输入院系' value='{{major}}'
+      name='major'/>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>学号</view>
+    <input type="text"placeholder-style=
+      'font-size:16px;color: #a9aaab;' 
+      placeholder=
+      '输入学号' value='{{studentNum}}'
+      name='studentNum'/>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>手机号</view>
+    <input type="text"placeholder-style=
+      'font-size:16px;color: #a9aaab;' 
+      placeholder=
+      '输入手机号' value='{{phone}}'
+      name='phone'/>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="item">
+    <view>验证码</view>
+    <input type="text"placeholder-style=
+      'font-size:16px;color: #a9aaab;' 
+      placeholder=
+      '输入验证码'
+      value='{{verification}}'
+      name='verification'/>
+  </view>
+  <view style="height: 0spx;border: solid 1px #f0f1f2;"></view>
+  <view class="upload">
+    <view> 上传学生证</view>
+    <image src="{{cardImg}}" mode='aspectFill'/>
+    <view class="add" bindtap="upload">+</view>
+  </view>
+ 
+  <view class="btn" >发送验证码</view>
+  <view class="btn">认证</view>
+</form>
+</view>

@@ -2,6 +2,8 @@
   <input type="text" placeholder-style=
   'font-size:12px;color: #818184;' 
   placeholder=
-  '想要说点什么…'/>
-  <image src="/images/send.png"></image>
+  '想要说点什么…'
+  value='{{content}}'
+  bindinput='input'/>
+  <image src="/images/send.png" class="sendimg" bindtap="sendmsg"></image>
 </view>

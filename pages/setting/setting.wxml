@@ -11,10 +11,10 @@
     <image src="/images/go.png" style="width: 13px;height: 13px;"></image>
   </navigator>
 
-  <view class="item" style=" margin-top: 10px;">
+  <!-- <view class="item" style=" margin-top: 10px;">
     <view>帐号管理</view>
     <image src="/images/go.png"></image>
-  </view>
+  </view> -->
  
   <navigator url="/pages/address-manager/address-manager" class="item">
     <view>收货地址</view>

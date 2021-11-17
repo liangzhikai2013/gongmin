@@ -5,12 +5,12 @@
     <view>意见反馈</view>
     <image src="/images/go.png"  ></image>
   </view>
-  <view class="item">
+  <!-- <view class="item">
     <view>检查版本</view>
     <image src="/images/go.png"></image>
   </view>
   <view class="item">
     <view>评分</view>
     <image src="/images/go.png" ></image>
-  </view>
+  </view> -->
 </view>

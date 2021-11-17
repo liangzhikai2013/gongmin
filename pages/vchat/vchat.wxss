@@ -33,7 +33,7 @@
   width: 248px;
 	background-color: #536070;
   border-radius: 17px;
-  padding: 20px;
+  padding: 14px;
   color: #ffffff;
   font-size: 14px;
   margin-right: 10px;
@@ -42,7 +42,7 @@
   width: 248px;
 	background-color: #fdfdfd;
   border-radius: 17px;
-  padding: 20px;
+  padding: 14px;
   color: #000000;
   font-size: 14px;
   margin-left: 10px;

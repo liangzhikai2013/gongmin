@@ -1,53 +1,15 @@
 <view class="page">
-  <view class="time">18:53</view>
-  <view class="friend">
-    <image src="/images/default.png" class="avatar"></image>
-    <view class="content">您好，我是一个美术大学科毕业，平时不
-仅亲手绘制杂志与书籍的插画，以及制作
-手工手机壳，近年也在做很多手工的系列
-衍生品，设计制作作品。
-感谢您对我的信任与喜欢哦～"</view>
-    
-  </view>
-  <view class="time">18:53</view>
-  <view class="me">
-   
-    <view class="content">您好，我想询问一下这个手机壳，他的是
-用什么材质做的呢？</view>
-<image src="/images/default.png" class="avatar"></image>
-    
-  </view>
-  <view class="time">18:53</view>
-  <view class="me">
-   
-    <view class="content">您好，我想询问一下这个手机壳，他的是
-用什么材质做的呢？</view>
-<image src="/images/default.png" class="avatar"></image>
-    
-  </view>
-  <view class="time">18:53</view>
-  <view class="me">
-   
-    <view class="content">您好，我想询问一下这个手机壳，他的是
-用什么材质做的呢？</view>
-<image src="/images/default.png" class="avatar"></image>
-    
-  </view>
-  <view class="time">18:53</view>
-  <view class="me">
-   
-    <view class="content">您好，我想询问一下这个手机壳，他的是
-用什么材质做的呢？</view>
-<image src="/images/default.png" class="avatar"></image>
-    
-  </view>
-  <view class="time">18:53</view>
-  <view class="me">
-   
-    <view class="content">您好，我想询问一下这个手机壳，他的是
-用什么材质做的呢？</view>
-<image src="/images/default.png" class="avatar"></image>
-    
-  </view>
+  <block wx:for="{{list}}" wx:key='index'>
+    <view class="time">{{list[index].time}}</view>
+    <view class="friend"  wx:if="{{!(list[index].user_id==openid)}}">
+      <image src="{{list[index].avatar}}" class="avatar"></image>
+      <view class="content">{{list[index].content}}</view>
+    </view>
+    <view class="me" wx:if="{{list[index].user_id==openid}}">
+      <view class="content">{{list[index].content}}</view>
+      <image src="{{list[index].avatar}}" class="avatar"></image>
+    </view>
+  </block>
+  
   <send></send>
 </view>

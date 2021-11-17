@@ -1,75 +1,154 @@
 <view style="padding:20px">
   <view class="block">
-    <input type="text" class="input-school" placeholder-style='font-size:15px;color: #a9aaab;'
-      placeholder='快点写下作品发布描述吧！' />
+    <input type="text" bindinput='descriptionInput' class="input-school" placeholder-style='font-size:15px;color: #a9aaab;'
+      placeholder='快点写下作品发布描述吧！' value="{{description}}" />
     <view class="bottom">
       <view class="imglist">
-        <image src="/images/default0.png"></image>
-        <image src="/images/default0.png"></image>
-        <image src="/images/default0.png"></image>
+        <block wx:for="{{imglist}}" wx:key='index' >
+        <image src="{{imglist[index]}}" bindlongpress='deleImg' mode='aspectFill' data-index="{{index}}"></image>
+      </block>
       </view>
-      <view class="add-block"> + </view>
+     
+      <view class="add-block" bindtap="addImg"> + </view>
     </view>
   </view>
   <view class="input-title">
     <span>添加标题</span>
-    <input type="text" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='写下你的标题吧！以便别早点发现你' />
+    <input type="text" bindinput='titleChange' placeholder-style='font-size:13px;color: #a9aaab;' placeholder='写下你的标题吧！以便别早点发现你' value="{{title}}"/>
   </view>
   <view class="line"></view>
   <view style="font-size: 18px;color: #19191b;margin-top:20px;font-weight:bold">作品信息</view>
   <view class="worksitem">
     <view class="worksinfor">
-      <span style="font-size: 16px;color: #2e2e31;">作品编号</span>
-      <input type="text" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='247653789' />
+      <span style="font-size: 16px;color: #2e2e31;">作品形式</span>
+      <radio-group bindchange="radioChange">
+      <view style="display:flex">
+        <label class="radio" style="margin-left: 30px;">
+          <radio value="1" checked="{{type==1}}" color="#2c2c2c"/>展示
+        </label>
+      <!-- <label class="radio" style="margin-left: 30px;">
+        <radio value="2"  checked="{{type==2}}" color="#2c2c2c"/>出售
+      </label>
+      </view>
+       <view style="display:flex;">
+        <label class="radio" style="margin-left: 30px;">
+        <radio value="3"  checked="{{type==3}}" color="#2c2c2c"/>抽奖
+      </label>
+      <label class="radio" style="margin-left: 30px;">
+        <radio value="4" checked="{{type==4}}" color="#2c2c2c"/>拍卖
+      </label> -->
+       </view>
+     
+      </radio-group>
+     
     </view>
     <view class="line"></view>
   </view>
-  <view class="worksitem">
+
+  <view class="worksitem" wx:if="{{type==2}}">
     <view class="worksinfor">
-      <span style="font-size: 16px;color: #2e2e31;">发布者姓名</span>
-      <input type="text" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='马小跳' />
+      <span style="font-size: 16px;color: #2e2e31;">商品库存</span>
+      <input type="number" bindinput='countChange' value="{{count}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem" wx:if="{{type==2}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">商品售价</span>
+      <input type="number" bindinput='priceChange' value="{{price}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem" wx:if="{{type==2||type==3||type==4}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">运费</span>
+      <input type="number" bindinput='freightChange' value="{{freight}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+      <checkbox-group  bindchange="freightflageChange">
+        <label class="radio" style="margin-left: 30px;">
+          <checkbox checked="{{freightflage==1}}" color="#2c2c2c"/>包邮
+        </label>
+      </checkbox-group>
+      
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem" wx:if="{{type==4}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">起拍价</span>
+      <view style="display:flex;margin-left:32px">
+       <span style="width:auto;color: #a9aaab">¥</span> 
+        <input style="margin-left:0" type="number" bindinput='startpriceChange' value="{{startprice}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+     </view>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem" wx:if="{{type==4}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">保证金</span>
+      <view style="display:flex;margin-left:32px">
+       <span style="width:auto;color: #a9aaab">¥</span> 
+        <input style="margin-left:0" type="number" bindinput='bondChange' value="{{bond}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+     </view>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem" wx:if="{{type==4}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">加价幅度</span>
+      <view style="display:flex;margin-left:32px">
+       <span style="width:auto;color: #a9aaab">¥</span> 
+        <input style="margin-left:0" type="number" bindinput='pricestepChange' value="{{pricestep}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+     </view>
+    </view>
+    <view class="line"></view>
+  </view>
+
+
+  <view class="worksitem" wx:if="{{type==3}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">获奖人数</span>
+    
+        <input style="margin-left:0" type="number" bindinput='winnersChange' value="{{winners}}" placeholder-style='font-size:13px;color: #a9aaab;' placeholder='0' />
+    
+    </view>
+    <view class="line"></view>
+  </view>
+
+  <view class="worksitem" wx:if="{{type==4||type==3}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">开始时间</span>
+      <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2100-09-01" bindchange="bindstartDateChange" placeholder='请选择开始时间'>
+        <view class="picker">
+          {{startdate==''?'请选择开始时间':startdate}}
+        </view>
+      </picker>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="worksitem" wx:if="{{type==4||type==3}}">
+    <view class="worksinfor">
+      <span style="font-size: 16px;color: #2e2e31;">结束时间</span>
+      <picker mode="date" value="{{enddate}}" start="2015-09-01" end="2100-09-01" bindchange="bindendDateChange" placeholder='请选择结束时间'>
+        <view class="picker">
+          {{enddate==''?'请选择结束时间':enddate}}
+        </view>
+      </picker>
     </view>
     <view class="line"></view>
   </view>
   <view class="worksitem">
     <view class="worksinfor">
       <span style="font-size: 16px;color: #2e2e31;">作品类别</span>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{jurisdiction}}">
+      <picker bindchange="typeChange" value="{{index}}" range="{{jurisdiction}}" range-key="name">
         <view class="picker">
-          <image src="/images/release-view/arrow.png"></image>
-          <span> {{jurisdiction[index]}}</span>
+          <image src="/images/release-view/arrow.png" ></image>
+          <span> {{jurisdiction[index].name}}</span>
         </view>
       </picker>
     </view>
     <view class="line"></view>
   </view>
-  <view class="worksitem">
-    <view class="worksinfor">
-      <span style="font-size: 16px;color: #2e2e31;">作品权限</span>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{jurisdiction}}">
-        <view class="picker">
-          <image src="/images/release-view/arrow.png"></image>
-          <span> {{jurisdiction[index]}}</span>
-        </view>
-      </picker>
-    </view>
-    <view class="line"></view>
-  </view>
-  <view class="worksitem">
-    <view class="worksinfor">
-      <span style="font-size: 16px;color: #2e2e31;">作品形式</span>
-      <radio-group bindchange="radioChange">
-        <label class="radio">
-        <radio value="r1" checked="true" color="#2c2c2c"/>展示
-      </label>
-      <label class="radio">
-        <radio value="r2"  color="#2c2c2c"/>出售
-      </label>
-      </radio-group>
-     
-    </view>
-    <view class="line"></view>
-    <view class="submit"> 立即发布 </view>
-
-  </view>
+  
+  
+  <view class="submit" bindtap="submit"> {{edit==0?'立即发布':'修改'}} </view> 
 </view>

@@ -1,30 +1,62 @@
 <!--miniprogram/custom-tab-bar/index.wxml-->
 <div>
   <div class="background" bindtap="closeshow" wx:if="{{show}}">
+    <view class="notice">
+      <view class="notice_title">温馨提示</view>
+      <view class="notice_content">
+        <view class="notice_item_1">
+          <image src="/images/tabbar/original.png" style="width: 23px;height: 29px;"></image>
+          <span style="margin-top:4px;margin-left:5px">原 创</span>
+        </view>
+        <view class="notice_item_2">
+          原创是独立完成的创作哦，不可以歪曲、
+          篡改他人创作或者抄袭、剽窃他人的创
+          作，也不可以改编、翻译、注释、整理
+          他人已有的创作！
+        </view>
+        <view class="notice_item_1" style="margin-top:40px">
+          <image src="/images/tabbar/second.png" style="width: 23px;height: 29px;"></image>
+          <span style="margin-top:4px;margin-left:5px">二次创作</span>
+        </view>
+        <view class="notice_item_2">
+          二次创作是指使用了已存在著作物的文
+字、图像、影片、音乐或其他艺术作品，
+进行二次加工的产物哦！
+        </view>
+      </view>
+      
+    </view>
   </div>
+  
   <view class="click-top" wx:if="{{show}}">
+  
     <span style="margin-bottom:141px;color: #ffffff;font-size: 21px;"> 发布点什么 </span>
     <div class="click-top">
-      <navigator url="/pages/release-view/release" class="item">
+      <view url="/pages/release-view/release?edit=0&type=1" class="item" bindtap="gooriginal">
         <image src="/images/tabbar/original.png"></image>
-        <span style="margin-top:4px">原 创</span>
-      </navigator>
-      <navigator url="/pages/release-view/release" class="item">
+        <span style="">原 创</span>
+      </view>
+      <view url="/pages/release-view/release?edit=0&type=2" class="item" bindtap="gosecond">
         <image src="/images/tabbar/second.png"></image>
-        <span style="margin-top:4px">二次创作</span>
-      </navigator>
+        <span style="">二次创作</span>
+      </view>
     </div>
 
   </view>
   <view class="top-dev" wx:if="{{show}}">
-    <image src="/images/tabbar/catchfish.png" class="top-img"></image>
+    <image  wx:if="{{!canIUse}}" src="/images/tabbar/catchfish.png" class="top-img"></image>
   </view>
-
+  <!-- <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      <image src="/images/tabbar/catchfish.png" class="top-img"></image>
+    </button> -->
   <div class="tab-bar">
-    <div wx:for="{{list}}" wx:key="index" class="{{item.text== '摸个鱼'?'tab-bar-item-1':'tab-bar-item'}}"
-      data-path="{{item.pagePath}}" data-text="{{item.text}}" data-index="{{index}}" bindtap="switchTab">
+   
+    <div  wx:for="{{list}}" wx:key="index" class="{{item.text== '摸个鱼'?'tab-bar-item-1':'tab-bar-item'}}"
+      data-path="{{item.pagePath}}" data-text="{{item.text}}" data-index="{{index}}" bindtap="switchTab"   >
       <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
       <div style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</div>
     </div>
   </div>
+  <!-- <button  class='getUserInfo' wx:if="{{!allow}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">  
+    </button> -->
 </div>

@@ -1,36 +1,36 @@
 <view>
-  <image src="/images/default.png" style="width: 100%;height: 123px;"></image>
+  <image src="/images/default0.png" style="width: 100%;height: 123px;"></image>
   <view class="title">
-    <image src="/images/default.png"></image>
+    <image src="{{userInfor.avatar}}" mode="aspectFill"></image>
     <view>
       <view>
         <view class="right-group1">
           <view class="right-group-item">
-            <view>460</view>
+            <view>{{userInfor.fans>1000?userInfor.fans/1000+'K':userInfor.fans}}</view>
             <view>粉丝</view>
           </view>
           <view class="right-group-item">
-            <view>3.2万</view>
+            <view>{{userInfor.follow>1000?userInfor.follow/1000+'K':userInfor.follow}}</view>
             <view>关注</view>
           </view>
           <view class="right-group-item">
-            <view>4</view>
+            <view>{{userInfor.praised>1000?userInfor.praised/1000+'K':userInfor.praised}}</view>
             <view>获赞</view>
           </view>
         </view>
       </view>
-      <view class="btn-group">
+      <view class="btn-group" wx:if="{{!isme}}">
         <view class="btn">私信</view>
-        <view class="btn2">已关注</view>
+        <view class="{{isfollow?'btn2':'btn'}}" bindtap="follow">{{isfollow?'已关注':'关注'}}</view>
       </view>
     </view>
   </view>
   <view style="padding:20px">
-    <view style="color: #000000;font-size: 22px;line-height: 30px;">这里作者的昵称</view>
-    <view style="color: #98999a;font-size: 11px;line-height: 16px;margin-top:8px">账号：198754331</view>
-    <view style="color: #98999a;font-size: 14px;line-height: 20px;margin-top:8px">我是一个噢噢噢噢噢噢噢噢噢噢噢噢噢</view>
+    <view style="color: #000000;font-size: 22px;line-height: 30px;">{{userInfor.name}}</view>
+    <view style="color: #98999a;font-size: 11px;line-height: 16px;margin-top:8px">{{userInfor.school}} {{userInfor.grade}}</view>
+    <view style="color: #98999a;font-size: 14px;line-height: 20px;margin-top:8px">{{userInfor.introduction}}</view>
     <view style="display:flex">
-      <view class="tag">男</view>
+      <view class="tag">{{userInfor.gender}}</view>
       <view class="tag">北京·大兴</view>
     </view>
     <view style="height: 0px;border: solid 1px #cacaca;margin-top:20px"></view>
@@ -38,7 +38,7 @@
     <view class="content-top">
       <view style="display:flex;flex-direction: row;align-items: center;">
         <view style="width: 4px;height: 16px;background-color: #545e6a;"></view>
-      <span style="font-size: 16px;color: #19191b;font-weight: bold;margin-left:5px">共上传90个创作</span>
+      <span style="font-size: 16px;color: #19191b;font-weight: bold;margin-left:5px">共上传{{workList.length}}个创作</span>
       </view>
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{orderRule}}">
         <view class="picker" >
@@ -48,21 +48,23 @@
       </picker>
     </view>
     <view class="content-list">
-      <block  wx:for="{{productList}}" wx:key="*this">
-        <view class="content-item">
-        <image src="/images/default{{index}}.png" class="picimage" mode="widthFix"></image>
-        <span>DIY｜原创手机壳 可可爱爱秋冬限定</span>
+      <block  wx:for="{{workList}}" wx:key="*this">
+        <navigator  class="content-item" url="{{workList[index].type=='3'?'/pages/luck-draw/luck-draw':workList[index].type=='4'?'/pages/auction/auction':'/pages/details/details'}}?type=1&id={{workList[index].id}}&&status={{workList[index].type}}" >
+
+       
+        <image src="{{workList[index].cover_img}}" class="picimage" mode="widthFix"></image>
+        <span>{{workList[index].title}}</span>
         <view class="content-item-bottom">
           <view class="group">
-            <image src="/images/default.png" class="avatar"/>
-          <span>小心</span>
+            <image src="{{workList[index].avatar}}" class="avatar" mode="aspectFill"/>
+          <span>{{workList[index].name}}</span>
           </view>
           <view class="group">
             <image src="/images/home/zan.png" class="icon"/>
-            <span>234</span>
+            <span>{{workList[index].zan}}</span>
           </view>
         </view>
-      </view>
+      </navigator>
       </block>
     </view>
     </view>

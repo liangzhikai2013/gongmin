@@ -5,86 +5,64 @@
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{user_infor.avatar}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{user_infor.name}}</text>
       <div class='lable-all'>
-        <div class='lable-details'>女</div>
-        <div class='lable-details'>20岁</div>
+        <div class='lable-details'>{{user_infor.gender}}</div>
+        <div class='lable-details'>{{user_infor.age}}岁</div>
       </div>
-      <div class='pro-information'>学校：  北京印刷学院</div>
-      <div class='pro-information'>专业：  数字媒体艺术</div>
+      <div class='pro-information'>学校：  {{user_infor.school}}</div>
+      <div class='pro-information'>专业：  {{user_infor.major}}</div>
       <div class="tab">
         <navigator url="/pages/collection/collection" class='tab-unclick'>收藏</navigator>
-        <navigator url="/pages/order-list/order-list" class='tab-click'>订单</navigator>
+        <!-- <navigator url="/pages/order-list/order-list" class='tab-click'>订单</navigator> -->
+        <navigator class='tab-click'>订单</navigator> 
       </div>
     </block>
   </view>
-  <div class="display-all">
+  <!-- <div class="display-all">
     <div class="display-in">
       <div class="display-in-text">商品橱窗</div>
       <image  src="../../images/myhome/next.png" alt="" class="icon-next"></image>
     </div>
-  </div>
+  </div> -->
   <div class="dynamic-list">
     <div class="dynamic">商品动态</div>
-
-    <navigator url="/pages/details/details?type=0" class="commodity-content" >
+    <block wx:for="{{list}}" wx:key="index" wx:for-item="cell">
+      <navigator url="/pages/details/details?type=0&id={{list[index].id}}" class="commodity-content" >
       <div class="personal-infor">
-        <image  class="personal-avatar" src="{{userInfo.avatarUrl}}" ></image>
+        <image  class="personal-avatar" src="{{list[index].avatar}}" ></image>
         <div class="personal-right">
-          <div class="personal-name">梁智凯</div>
-          <div class="personal-time">2020-9-3  13: 05</div>
+          <div class="personal-name">{{list[index].name}}</div>
+          <div class="personal-time">{{list[index].creat_time}}</div>
         </div>
       </div>
-      <div class="dynamic-text">自创💗💗💗</div>
+      <div class="dynamic-text">{{list[index].description}}</div>
       <div class="dynamic-img">
-        <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img1" ></image>
+        <block wx:for="{{cell.img_list}}" wx:key="*this">
+          <image src="{{item}}" class="dynamic-img-img{{cell.img_list.length>1?'2':'1'}}" ></image>
+        </block>
+       
       </div>
       <div class="dynamic-bottom">
         <div class="dynamic-bottom-item">
           <image src="../../images/myhome/forward.png" class="dynamic-icon"></image>
-          <span class="dynamic-span">6</span>
+          <span class="dynamic-span">{{list[index].forward}}</span>
         </div>
         <div class="dynamic-bottom-item">
           <image src="../../images/myhome/comment.png" class="dynamic-icon"></image>
-          <span class="dynamic-span">6</span>
+          <span class="dynamic-span">{{list[index].comment}}</span>
         </div>
         <div class="dynamic-bottom-item">
           <image src="../../images/myhome/zan.png" class="dynamic-icon"></image>
-          <span class="dynamic-span">6</span>
+          <span class="dynamic-span">{{list[index].zan}}</span>
         </div>
       </div>
     </navigator>
+    </block>
+    
 
-    <navigator url="/pages/details/details?type=0" class="commodity-content">
-      <div class="personal-infor">
-        <image  class="personal-avatar" src="{{userInfo.avatarUrl}}" ></image>
-        <div class="personal-right">
-          <div class="personal-name">梁智凯</div>
-          <div class="personal-time">2020-9-3  13: 05</div>
-        </div>
-      </div>
-      <div class="dynamic-text">自创💗💗💗</div>
-      <div class="dynamic-img">
-        <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2" ></image>
-        <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2" ></image>
-        <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2" ></image>
-      </div>
-      <div class="dynamic-bottom">
-        <div class="dynamic-bottom-item">
-          <image src="../../images/myhome/forward.png" class="dynamic-icon"></image>
-          <span class="dynamic-span">6</span>
-        </div>
-        <div class="dynamic-bottom-item">
-          <image src="../../images/myhome/comment.png" class="dynamic-icon"></image>
-          <span class="dynamic-span">6</span>
-        </div>
-        <div class="dynamic-bottom-item">
-          <image src="../../images/myhome/zan.png" class="dynamic-icon"></image>
-          <span class="dynamic-span">6</span>
-        </div>
-      </div>
-    </navigator>
+    
 
     
   </div>

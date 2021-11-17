@@ -1,71 +1,41 @@
 <div class="dynamic-list">
-
+<block wx:for="{{list}}" wx:key="index" wx:for-item="cell">
   <div class="commodity-content">
     <div style="display:flex;justify-content:space-between">
       <div class="personal-infor">
-        <image class="personal-avatar" src="{{userInfo.avatarUrl}}"></image>
+        <image class="personal-avatar" src="{{cell.avatar}}"></image>
         <div class="personal-right">
-          <div class="personal-name">梁智凯</div>
-          <div class="personal-time">2020-9-3 13: 05</div>
+          <div class="personal-name">{{cell.name}}</div>
+          <div class="personal-time">{{cell.creat_time}}</div>
         </div>
 
       </div>
-      <div class="btn-follow">关注</div>
+      <div class="btn-follow" wx:if="{{cell.follow==null}}">关注</div>
     </div>
 
-    <div class="dynamic-text">自创💗💗💗</div>
+    <div class="dynamic-text">{{cell.description}}</div>
     <div class="dynamic-img">
-      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img1"></image>
+      <block wx:for="{{cell.img_list}}" wx:key="*this">
+          <image src="{{item}}" class="dynamic-img-img{{cell.img_list.length>1?'2':'1'}}" ></image>
+        </block>
     </div>
     <div class="dynamic-bottom">
       <div class="dynamic-bottom-item">
         <image src="../../images/myhome/forward.png" class="dynamic-icon"></image>
-        <span class="dynamic-span">6</span>
+        <span class="dynamic-span">{{cell.forward}}</span>
       </div>
       <div class="dynamic-bottom-item">
         <image src="../../images/myhome/comment.png" class="dynamic-icon"></image>
-        <span class="dynamic-span">6</span>
+        <span class="dynamic-span">{{cell.comment}}</span>
       </div>
       <div class="dynamic-bottom-item">
         <image src="../../images/myhome/zan.png" class="dynamic-icon"></image>
-        <span class="dynamic-span">6</span>
+        <span class="dynamic-span">{{cell.zan}}</span>
       </div>
     </div>
   </div>
-
-  <div class="commodity-content">
-    <div style="display:flex;justify-content:space-between">
-      <div class="personal-infor">
-        <image class="personal-avatar" src="{{userInfo.avatarUrl}}"></image>
-        <div class="personal-right">
-          <div class="personal-name">梁智凯</div>
-          <div class="personal-time">2020-9-3 13: 05</div>
-        </div>
-
-      </div>
-      <div class="btn-follow">关注</div>
-    </div>
-    <div class="dynamic-text">自创💗💗💗</div>
-    <div class="dynamic-img">
-      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2"></image>
-      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2"></image>
-      <image src="{{userInfo.avatarUrl}}" class="dynamic-img-img2"></image>
-    </div>
-    <div class="dynamic-bottom">
-      <div class="dynamic-bottom-item">
-        <image src="../../images/myhome/forward.png" class="dynamic-icon"></image>
-        <span class="dynamic-span">6</span>
-      </div>
-      <div class="dynamic-bottom-item">
-        <image src="../../images/myhome/comment.png" class="dynamic-icon"></image>
-        <span class="dynamic-span">6</span>
-      </div>
-      <div class="dynamic-bottom-item">
-        <image src="../../images/myhome/zan.png" class="dynamic-icon"></image>
-        <span class="dynamic-span">6</span>
-      </div>
-    </div>
-  </div>
+</block>
+  
 
 
 </div>

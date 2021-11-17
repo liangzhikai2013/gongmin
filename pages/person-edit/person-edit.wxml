@@ -1,5 +1,5 @@
 <view style="text-align:center">
-  <image src="/images/default.png" style="width: 88px;height: 88px;border-radius:50%;margin-top:35px"></image>
+  <image src="{{avatar}}" style="width: 88px;height: 88px;border-radius:50%;margin-top:35px" bindtap="uploadImgFile"></image>
   <view style="color: #bfbebe;font-size: 13px;margin-top:11px">点击更改</view>
   <view style="width:300px;margin-left:32px;margin-top:30px">
     <view class="item">
@@ -19,7 +19,7 @@
   </view>
   <view class="item">
     <view class="name">生日</view>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <picker mode="date" value="{{date}}" start="1990-09-01" end="2117-09-01" bindchange="bindDateChange">
         <view class="picker" >
           <span> {{date}}</span>
         </view>

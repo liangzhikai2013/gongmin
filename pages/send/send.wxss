@@ -16,8 +16,10 @@
 input{
   color: #818184;
   font-size: 12px;
+  margin-bottom: 20px;
 }
-image{
+.sendimg{
   width: 21px;
-	height: 18px;
+  height: 18px;
+  margin-bottom: 20px;
 }

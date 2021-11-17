@@ -1,10 +1,21 @@
 <cover-view class="bottom">
-        <cover-view class="collection">
-          <cover-image src="/images/details/collection.png"></cover-image>
+        <cover-view class="collection" bindtap="zan">
+          <cover-image src="{{m_state==1||m_state==3?'/images/details/like.jpg':'/images/details/unlike.jpg'}}"> </cover-image>
+          <cover-view style="color:#818184;font-size: 10px;margin-top:5px">点赞</cover-view>
+        </cover-view>
+        <cover-view class="collection" bindtap="comment">
+          <cover-image src="/images/details/comment1.jpg"></cover-image>
+          <cover-view style="color:#818184;font-size: 10px;margin-top:5px">评论</cover-view>
+        </cover-view>
+        <cover-view class="collection" bindtap="collect">
+          <cover-image src="{{m_state==2||m_state==3?'/images/details/collection.jpg':'/images/details/uncollection.jpg'}}"></cover-image>
           <cover-view style="color:#818184;font-size: 10px;margin-top:5px">收藏</cover-view>
         </cover-view>
-        <cover-view style="display:flex;flex-direction:row">
-          <navigator url="/pages/luck-draw/luck-draw" class="luck-draw" hover-class="action">抽奖</navigator>
-          <navigator url="/pages/order-content/order"  class="buy" hover-class="action">我要购买</navigator>
+       <cover-view style="display:flex;flex-direction:row">
+          <!-- <cover-view url="/pages/luck-draw/luck-draw" class="luck-draw" hover-class="action" bindtap="luckDraw">抽奖</cover-view>  -->
+          <cover-view   class="buy " hover-class="action"   bindtap="buy" >{{work_status==2?'我要购买':work_status==1?'聊一聊':'我要出价'}}</cover-view>
+          <!-- <cover-view url="/pages/order-content/order"  class="buy " hover-class="action" bindtap="buy">{{work_status==2?'我要购买':work_status==1?'聊一聊':'我要出价'}}</cover-view> -->
+
         </cover-view>
+       
 </cover-view>

@@ -1,15 +1,15 @@
 <view class="top">
-  <block wx:for="{{list}}" wx:key="index">
+  <block wx:for="{{data}}" wx:key="index">
     <view class="item">
           <view class="left">
-            <image src="/images/default.png"></image>
+            <image src="{{data[index].avatar}}"></image>
             <view class="person-infor">
-              <view style="font-size: 16px;color: #19191b;line-height: 32px;">鸿运当头</view>
-              <view style="font-size: 15px;color: #a0a1a2;line-height: 16px;">评论你：好看！</view>
-              <view style="font-size: 13px;color: #a0a1a2;line-height: 16px;">03:18</view>
+              <view style="font-size: 16px;color: #19191b;line-height: 32px;">{{data[index].name}}</view>
+              <view style="font-size: 15px;color: #a0a1a2;line-height: 16px;">{{type==1?'点赞了你':'评论:'+data[index].content}}</view>
+              <view style="font-size: 13px;color: #a0a1a2;line-height: 16px;">{{data[index].time}}</view>
             </view>
           </view>
-          <image src="/images/default.png" style="width: 65px;height: 65px;border: solid 1px #707070;border-radius: 0%;"></image>
+          <image src="{{data[index].cover_img}}" style="width: 65px;height: 65px;border: solid 1px #707070;border-radius: 0%;"></image>
         </view>
         <view style="height: 0px;border: solid 1px #f4f5f7;"></view>
   </block>

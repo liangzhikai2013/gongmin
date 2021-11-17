@@ -72,7 +72,7 @@ swiper-item image{
 	line-height: 53px;
 	letter-spacing: 1px;
   color: #ffffff;
-  width: 100%;
+ 
 	height: 53px;
   background-color: #53606f;
   padding-left: 20px;
@@ -338,4 +338,10 @@ cover-view cover-image{
 .action{
   background: #53606f;
   color: white;
+}
+.first{
+  background-color: #6e5454;
+}
+.second{
+  background-color: #6f6d59;
 }

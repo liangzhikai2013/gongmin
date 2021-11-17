@@ -1,35 +1,35 @@
-<view style="width:100%">
-  <navigator url="/pages/customer-service/service" class="customer">
+<view style="width:100vw" >
+  <!-- <navigator url="/pages/customer-service/service" class="customer">
     <image src="/images/luck-draw/customer.png"></image>
-  </navigator>
+  </navigator> -->
   <button class="forword" open-type="share" plain="ture" >
     <image src="/images/luck-draw/share.png"></image>
   </button>
   <view class="page-section page-section-spacing swiper">
       <swiper indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{detailImgList}}" wx:key="*this">
           <swiper-item>
-            <image src="/images/default.png" alt=""/>
+            <image mode="aspectFit" src="{{detailImgList[index]}}" alt=""/>
           </swiper-item>
         </block>
       </swiper>
     </view>
     <view class="price">
-      ¥672
+      ¥{{detailInfor.price}}
     </view>
-    <view class="content">
+    <view class="content" bindtap="showbottom">
       <view class="title">
         <view class="title-left">
-          <view style="font-family: PingFang SC; font-size: 22px;line-height: 30px;color: #707070;">手工手机壳</view>
-          <view  style="font-family: PingFang SC; font-size: 14px;line-height: 20px;color: #000000;">作者：马小跳</view>
+          <view style="font-family: PingFang SC; font-size: 22px;line-height: 30px;color: #707070;">{{detailInfor.title}}</view>
+          <view  style="font-family: PingFang SC; font-size: 14px;line-height: 20px;color: #000000;">作者：{{detailInfor.name}}</view>
         </view>
         <view class="title-right">
-          <view class="title-right-item">
+          <view class="title-right-item" wx:if="{{detailInfor.type==2}}">
             <image src="/images/luck-draw/sell.png"/>
             <span>售卖</span>
           </view>
-          <view class="title-right-item">
+          <view class="title-right-item" wx:if="{{detailInfor.type==1}}">
             <image src="/images/luck-draw/show.png"/>
             <span>展示</span>
           </view>
@@ -39,30 +39,30 @@
         简介:
       </view>
       <view style="height: 34px;font-size: 12px;line-height: 17px;color: #818184;margin-top:2px">
-        该手机壳所有DIY配件大家也可以根据喜好直接购买，很多DIY
-        饰品可以供你们挑选，把你想做的图案和手机型号告诉作……
+        {{detailInfor.description}}
       </view>
       <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:10px"></view>
       <view class="lable">
         <image src="/images/details/lable.png"></image>
         <span>标签</span>
       </view>
-      <view class="lable">
-        <view class="lable-item">手机壳</view>
-        <view class="lable-item">手机</view>
-        <view class="lable-item">手机壳手机壳</view>
+      <view  class="lable" >
+        <block wx:for="{{tagList}}" wx:key="index">
+        <view class="lable-item {{tagList[index]=='原创'?'first':tagList[index]=='二次创作'?'second':''}}">{{tagList[index]}}</view>
+      </block>
       </view>
+     
       <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:10px"></view>
       <view class="lable">
         <image src="/images/details/detail.png"></image>
         <span>详情</span>
       </view>
-      <navigator url="/pages/person-home/person-home" class="person-item">
+      <navigator url="/pages/person-home/person-home?id={{detailInfor.user_id}}" class="person-item">
         <view class="person-item-left">
-          <image src="/images/default.png"/>
+          <image src="{{detailInfor.avatar}}"/>
         <view class="person-infor">
-          <span style="font-size: 16px;color: #000000;line-height: 22px;">马小跳</span>
-          <span style="font-size: 10px;color: #818184;line-height: 14px;">北京 北京印刷学院 大一</span>
+          <span style="font-size: 16px;color: #000000;line-height: 22px;">{{detailInfor.name}}</span>
+          <span style="font-size: 10px;color: #818184;line-height: 14px;">{{detailInfor.school}} {{detailInfor[index].grade}}</span>
         </view>
       </view>
       <view class="person-item-right">
@@ -76,18 +76,18 @@
       <view class="lable">
         <span style="color: #53606f;font-size: 15px;">全部评论</span>
         <image src="/images/details/comment.png" style="margin-left:18px"></image>
-        <span style="color: #53606f;font-size: 15px;">120</span>
+        <span style="color: #53606f;font-size: 15px;">{{commentList.length}}</span>
       </view>
       <block wx:for="{{commentList}}" wx:key="*this">
         <view class="comment-item">
-          <image src="/images/default.png"/>
+          <image src="{{commentList[index].avatar}}" mode=""/>
           <view class="comment-item-right">
             <view class="grop1">
-                <span style="color: #4b4b4b;font-size: 12px;line-height: 14px;">ejenlen</span>
-                <span style="color: #717171;font-size: 11px;line-height: 12px;margin-right:15px">12:30</span>
+                <span style="color: #4b4b4b;font-size: 12px;line-height: 14px;">{{commentList[index].name}}</span>
+                <span style="color: #717171;font-size: 11px;line-height: 12px;margin-right:15px">{{commentList[index].time}}</span>
             </view>
             <view style="margin-left:13px ;margin-top:4px">
-              <span style="color: #6c6c6c;font-size: 14px;line-height: 20px;">真不错</span>
+              <span style="color: #6c6c6c;font-size: 14px;line-height: 20px;">{{commentList[index].comment}}</span>
             </view>
             <view style="width:100%;border: solid 0.8px #cacaca;height: 0px;margin-top:4px"></view>
           </view>
@@ -96,6 +96,7 @@
       <view style="height:150px"></view>
       
     </view>
-<mybottom wx:if="{{my}}"></mybottom>
-<bottom wx:if="{{!my}}"></bottom>
+<mybottom wx:if="{{my&&!send}}"  work_id="{{detailInfor.id}}"></mybottom>
+<bottom wx:if="{{!my&&!send}}" bind:bottomClick="bottomClick" m_state="{{detailInfor.state}}" work_id="{{detailInfor.id}}" work_status="{{work_status}}" user_id="{{detailInfor.open_id}}"></bottom>
+<send wx:if="{{send}}"  bind:send="send"></send>
 </view>

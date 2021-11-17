@@ -1,0 +1,162 @@
+<view style="width:100vw" >
+  <navigator url="/pages/customer-service/service" class="customer">
+    <image src="/images/luck-draw/customer.png"></image>
+  </navigator>
+  <button class="forword" open-type="share" plain="ture" >
+    <image src="/images/luck-draw/share.png"></image>
+  </button>
+  <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{detailImgList}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{detailImgList[index]}}" alt=""/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="price">
+      ¥{{nowprice}}
+    </view>
+    <view class="content" bindtap="showbottom">
+      <view class="title">
+        <view class="title-left">
+          <view style="font-family: PingFang SC; font-size: 22px;line-height: 30px;color: #707070;">{{detailInfor.title}}</view>
+          <view  style="font-family: PingFang SC; font-size: 14px;line-height: 20px;color: #000000;">作者：{{detailInfor.name}}</view>
+        </view>
+        <view class="title-right">
+          <view class="title-right-item" wx:if="{{detailInfor.type==2}}">
+            <image src="/images/luck-draw/sell.png"/>
+            <span>售卖</span>
+          </view>
+          <view class="title-right-item" wx:if="{{detailInfor.type==1}}">
+            <image src="/images/luck-draw/show.png"/>
+            <span>展示</span>
+          </view>
+        </view>
+      </view>
+      <view style="line-height: 22px;font-size: 16px;color: #000000;margin-top:9px;letter-spacing: -1px; font-weight: bold;">
+        简介:
+      </view>
+      <view style="height: 34px;font-size: 12px;line-height: 17px;color: #818184;margin-top:2px">
+        {{detailInfor.description}}
+      </view>
+      <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:10px"></view>
+      <view class="lable">
+        <image src="/images/details/lable.png"></image>
+        <span>标签</span>
+      </view>
+      <view  class="lable" >
+        <block wx:for="{{tagList}}" wx:key="index">
+        <view class="lable-item {{tagList[index]=='原创'?'first':tagList[index]=='二次创作'?'second':''}}">{{tagList[index]}}</view>
+      </block>
+      </view>
+     
+      <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:10px"></view>
+      <view class="lable">
+        <image src="/images/details/detail.png"></image>
+        <span>详情</span>
+      </view>
+      <navigator url="/pages/person-home/person-home?id={{detailInfor.open_id}}" class="person-item">
+        <view class="person-item-left">
+          <image src="{{detailInfor.avatar}}"/>
+        <view class="person-infor">
+          <span style="font-size: 16px;color: #000000;line-height: 22px;">{{detailInfor.name}}</span>
+          <span style="font-size: 10px;color: #818184;line-height: 14px;">{{detailInfor.school}} {{detailInfor[index].grade}}</span>
+        </view>
+      </view>
+      <view class="person-item-right">
+        <span style="font-size: 12px;line-height: 13px;">主页</span>
+        <image src="/images/details/go.png"></image>
+      </view>
+      </navigator>
+      <block wx:for="{{detailImgList}}" wx:key="*this">
+        <image src="{{detailImgList[index]}}" style="margin-top:25px;width:100%" mode="widthFix"></image>
+      </block>
+      
+    </view>
+    <view style="width:100%;height: 5px;background-color: #f4f5f9;"></view>
+    <view style="padding:20px">
+      <view class="lable">
+        <span style="color: #53606f;font-size: 15px;">出价记录</span>
+      </view>
+      <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:10px"></view>
+      <block wx:for="{{showmore?auctionList:shortauctionList}}" wx:key="*this">
+        <view class="auction-item">
+          <view class="auction-item-left">
+            <image src="{{auctionList[index].avatar}}" mode=""/>
+            <span style="color: #4b4b4b;font-size: 12px;line-height: 14px;margin-left:10px">{{auctionList[index].name}}</span>
+          </view>
+          <span style="color: #717171;font-size: 11px;line-height: 12px;margin-right:15px">{{index==0?'最高出价 ¥':'¥'}}{{auctionList[index].price}}</span>
+        </view>   
+        <view style="width:100%;height: 0px;border: solid 1px #f3f4f6;margin-top:10px"></view>
+       
+      </block>
+      <view style="font-size: 15px;margin-top:20px;width:100%;color: #454242;text-align:center" bindtap="morePrice">{{showmore?'收起':'更多'}}</view>
+    </view>
+    
+      <view style="width:100%;height: 5px;background-color: #f4f5f9;"></view>
+      <view style="padding:20px">
+        <view class="lable">
+        <span style="color: #53606f;font-size: 15px;">全部评论</span>
+        <image src="/images/details/comment.png" style="margin-left:18px"></image>
+        <span style="color: #53606f;font-size: 15px;">{{commentList.length}}</span>
+      </view>
+      <block wx:for="{{commentList}}" wx:key="*this">
+        <view class="comment-item">
+          <image src="{{commentList[index].avatar}}" mode=""/>
+          <view class="comment-item-right">
+            <view class="grop1">
+                <span style="color: #4b4b4b;font-size: 12px;line-height: 14px;">{{commentList[index].name}}</span>
+                <span style="color: #717171;font-size: 11px;line-height: 12px;margin-right:15px">{{commentList[index].time}}</span>
+            </view>
+            <view style="margin-left:13px ;margin-top:4px">
+              <span style="color: #6c6c6c;font-size: 14px;line-height: 20px;">{{commentList[index].comment}}</span>
+            </view>
+            <view style="width:100%;border: solid 0.8px #cacaca;height: 0px;margin-top:4px"></view>
+          </view>
+        </view>
+      </block>
+      </view>
+     
+      <view style="height:150px"></view>
+     
+      <view style="width:100%;height: 5px;background-color: #f4f5f9;"></view>
+
+      
+      <bottom  bind:bottomClick="bottomClick" m_state="{{detailInfor.state}}" work_id="{{detailInfor.id}}" work_status="{{work_status}}" user_id="{{detailInfor.open_id}}"></bottom>
+      <cover-view class="background"  wx:if="{{offershow}}"></cover-view>
+      <cover-view class="offer" wx:if="{{offershow}}">
+            <cover-view class="top">
+              <cover-view  bindtap="back">
+                <cover-image src="/images/back.png"style="width:17px"></cover-image>
+              </cover-view>
+             
+              <!-- <cover-image src="/images/details/comment1.jpg"></cover-image> -->
+              <cover-view style="text-align:center;font-size: 16px;">当前价：¥{{nowprice}}</cover-view>
+              <cover-view style="width:17px"></cover-view>
+            </cover-view>
+
+            <cover-view class="middle">
+              <cover-view  class="price-edit-btn" bindtap="reducemyprice">
+                -{{config.price_step}}
+              </cover-view>
+              <cover-view style="font-size: 50px;margin:0 23px">
+                ¥{{myprice}}
+              </cover-view>
+              <cover-view  class="price-edit-btn" bindtap="addmyprice">
+                +{{config.price_step}}
+              </cover-view>
+            </cover-view>
+            <cover-view style="margin-top:16px;font-size: 16px;text-align:left;width:100%">
+              起拍价格：¥{{config.starting_price}}
+            </cover-view>
+            <cover-view style="margin-top:9px;font-size: 16px;text-align:left;width:100%">
+              加价区间：¥{{config.price_step}}
+            </cover-view>
+            <cover-view class="btn-submit" bindtap="submitOffer">
+             确认出价
+            </cover-view>
+      </cover-view>
+      
+</view>
